@@ -1,0 +1,5 @@
+These steps are towards the security of the entire system:
+
+1. Change default password and username.
+2. Change SSH Port.
+3. Disable HDMI Port access.
