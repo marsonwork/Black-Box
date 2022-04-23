@@ -6,6 +6,11 @@ A journey of raspberry pi being used as NAS
 
 It is a NAS which is run by the beast (where beast = Raspberry Pi 4B (8GB).
 
+## Functionalities:
+
+1. Can be shutdown with Argon Fan Hat. (Can be used in case of no wifi present, no need to ssh into pi to shut it down)
+2. It shuts down with based on Battery Percentage (This needs to be implemented)
+
 ## Contents of Black box hardware wise:
 
 1. Raspberry Pi 4B (8GB): The main core of the project.
