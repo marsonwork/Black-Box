@@ -30,7 +30,7 @@ Flash Raspberry Pi 64 bit lite os image. You can do it through Raspberry Pi Imag
 
 We will be using monitor to set up the raspberry pi initially, you can use the headless way too. 
 
-Plug the raspberry pi to the monitor, and then switch the Power Button ON on UPS, and then press the boot button on UPS hat. Let the Pi boot. Setup username and password, and then enable SSH and I2C. After that change logic mode to always ask password, from raspi-config (sudo raspi-config). Now update the Pi using sudo apt update && sudo apt upgrade -y
+Plug the raspberry pi to the monitor, and then switch the Power Button ON on UPS, and then press the boot button on UPS hat. Let the Pi boot. Setup username and password, and then enable SSH and I2C. After that change logic mode to always ask password, from raspi-config (```sudo raspi-config```). Now update the Pi using ```sudo apt update && sudo apt upgrade -y```
 
 ## Step 5: 
 
