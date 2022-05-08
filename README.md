@@ -10,6 +10,8 @@ It is a NAS which is run by the beast (where beast = Raspberry Pi 4B (8GB).
 
 1. Can be shutdown with Argon Fan Hat. (Can be used in case of no wifi present, no need to ssh into pi to shut it down)
 2. It shuts down with based on Battery Percentage (This needs to be implemented)
+3. Hosts a NAS that can be used to store files from your end devices
+4. Acts as a media center (Uses plex)
 
 ## Contents of Black box hardware wise:
 
