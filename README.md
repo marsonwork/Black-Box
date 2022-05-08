@@ -1,5 +1,5 @@
 # Black-Box
-A journey of raspberry pi being used as NAS
+A journey of raspberry pi being used as NAS and media server.
 
 
 ## What is Black-Box?
