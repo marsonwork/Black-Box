@@ -1,4 +1,4 @@
-## Welcome to UPS Hat setup
+# Welcome to UPS Hat setup
 
 UPS Hat works straight forward when you connect it to Raspberry Pi. In order to view the UPS stats you will need to configure few things.
 
