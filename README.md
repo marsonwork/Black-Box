@@ -4,7 +4,7 @@ A journey of raspberry pi being used as NAS and media server.
 
 ## What is Black-Box?
 
-It is a NAS which is run by the beast (where beast = Raspberry Pi 4B (8GB).
+It is a NAS which is run by the beast (where beast = Raspberry Pi 4B (8GB)).
 
 ## Functionalities:
 
