@@ -21,11 +21,3 @@ It is a NAS which is run by the beast (where beast = Raspberry Pi 4B (8GB).
 4. SD Card: For operating system.
 5. 2 TB Hard Disk Drive (HDD): For data storage.
 6. A power adapter (Comes with UPS hat): Power source to the UPS.
-
-## Softwares required to run into Black-Box:
-
-1. Raspberry Pi 64 bit OS (CLI).
-2. Rpi Health Monitor script.
-3. Argon40 Fan hat script.
-4. .....
-5. .....
