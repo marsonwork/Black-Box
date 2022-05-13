@@ -23,7 +23,7 @@ For continuous monitoring, you will have to enable run on boot for both the scri
 
 2. After that download the INA219.py script provided by waveshare (I have provided the same script here for convenience)
 
-3. Then create a directory and place that script (INA219.py) into that. After that download the scripts: ups-server.py and ups-datalogger.py.
+3. Then create a directory (ex: ```mkdir ups-hat```) and place that script (INA219.py) into that. After that download the scripts: ups-server.py, ups-datalogger.py and templates folder. Move all these into the ups-hat directory. (Hint: For downloading and moving, you can also use another linux system and scp the files from there to ups-hat directory).
 
 4. Now you can any of the following using commands are: ```python ups-server.py``` or ```python ups-datalogger.py```
 
