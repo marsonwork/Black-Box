@@ -6,7 +6,7 @@ Note: This document is still in development and I am replicating setup for black
 
 1. Raspberry Pi 4B (I will be using 8GB RAM version)
 2. Waveshare UPS HAT(B) & 8.4 charger (Provided by waveshare)
-3. Two good 18650 Cells (Choose a good quality Li - ion cells, else after few uses you might get undervoltage warning in Pi, you can check that here: vcgencmd get_throttled or dmesg)
+3. Two good 18650 Cells (Choose a good quality Li - ion cells, else after few uses you might get undervoltage warning in Pi, you can check that here: ```vcgencmd get_throttled``` or ```dmesg```)
 4. Argon Fan Hat
 5. Micro SD Card (I am using 64 GB Sandisk extreme)
 6. External Hard Disk for server (I am using WD 2TB HDD)
