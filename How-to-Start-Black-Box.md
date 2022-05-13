@@ -22,7 +22,7 @@ Attach the Argon Fan Hat along with External HDD on USB 3.0 port.
 
 ## Step 3: 
 
-Flash Raspberry Pi 64 bit lite os image. You can do it through Raspberry Pi Imager, or using the image file from raspberry pi org. Since we won't be needing the GUI environment here, we will be limiting oursefls to a lite version.
+Flash Raspberry Pi 32 bit lite os image (Facing undervoltage detection issue with 64 bit os). You can do it through Raspberry Pi Imager, or using the image file from raspberry pi org. Since we won't be needing the GUI environment here, we will be limiting oursefls to a lite version.
 
 ### NOTE: At this point, you should have your battery fully charged, with all hardwares assembled, and SD Card flashed with raspberry pi os. You are now ready for Step 4.
 
