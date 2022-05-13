@@ -9,9 +9,15 @@ ups-datalogger.py:    The stats can also be logged using another script.
 
 For continuous monitoring, you will have to enable run on boot for both the script (ups-server.py and ups-datalogger.py).
 
-## How to use it?
 
-Pre-requisites: You will have to install smbus module which is used by INA219.py using : sudo apt-get install python3-smbus
+
+## Pre-requisites: 
+
+1. If smbus is not found: You will have to install smbus module which is used by INA219.py using : ```sudo apt-get install python3-smbus```
+2. pip by default won't be there: if you enter pip you will be prompt with this error: pip: command not found, install it using following command: ```sudo apt-get install python3-pip```
+3. Flask for web server: ```pip install flask```
+
+## How to use it?
 
 1. First connect to Raspberry Pi and enable I2C via ```sudo raspi-config```.
 
