@@ -1,5 +1,7 @@
 # Welcome to UPS Hat setup
 
+UPS Used: https://www.waveshare.com/ups-hat-b.htm
+
 UPS Hat works straight forward when you connect it to Raspberry Pi. In order to view the UPS stats you will need to configure few things.
 
 ## What is the setup used for?
