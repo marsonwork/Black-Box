@@ -14,7 +14,9 @@ Note: This document is still in development and I am replicating setup for black
 
 ## Step 1: 
 
-Assemble Raspberry Pi 4B with Waveshare UPS Hat (B). Before turnig on the supply, make sure you charge the 18650 cells to the full through 8.4 v charger provided.
+Assemble Raspberry Pi 4B with Waveshare UPS Hat (B). Before turnig on the supply, make sure you charge the 18650 cells to the full through 8.4 v charger provided (Do not use 8.4 v charger provided, as this does not provides enough power to Pi and you get undervoltage issue, even plugging out batteries behave in abnormal way, after some amount of time, battery behaves normally, waiting for new power supply).
+
+You can use add ons for UPS hat which are optional, it will let you know the UPS Battery stats like percentage remaining. You can find it in inital-setup folder under main repo black box.
 
 ## Step 2:
 
