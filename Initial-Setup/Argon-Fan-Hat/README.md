@@ -18,7 +18,7 @@ Turn on Pi, default speed will be 50 % fan speed, without script installation.
 
 ### Step 3: 
 
-Install this script, instead of the one mentioned in the document:
+Install this script:
 
 		curl https://download.argon40.com/argon1.sh | bash
 
