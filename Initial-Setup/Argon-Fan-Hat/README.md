@@ -10,7 +10,7 @@ Below are the steps to use the fan hat along with script.
 
 ### Step 1: 
 
-Turn OFF Pi, Install the Fan hat.
+Attach the fan hat while raspberry pi is turned off. Make sure you slide the heat sink on top of main processor to slightly on right side (since the screw on bottom of fan hat interfers with the heat sink.)
 
 ### Step 2: 
 
