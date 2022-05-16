@@ -1,15 +1,34 @@
-Step 1: Turn OFF Pi, Install the Fan hat.
+# How to use Argon Fan hat
 
-Step 2: Turn on Pi, default speed will be 50 % fan speed, without script installation.
+Here I will be describing how to use the argon fan hat with raspberry pi.
 
-Step 3: Install this script, instead of the one mentioned in the document:
+First of all it runs at default of 50 % fan speed when connected, and Power button on board is only functional after the script installation.
+
+Below are the steps to use the fan hat along with script.
+
+## Steps to configure Argon Fan Hat:
+
+### Step 1: 
+
+Turn OFF Pi, Install the Fan hat.
+
+### Step 2: 
+
+Turn on Pi, default speed will be 50 % fan speed, without script installation.
+
+### Step 3: 
+
+Install this script, instead of the one mentioned in the document:
 
 		curl https://download.argon40.com/argon1.sh | bash
 
-Step 4: Reboot the Pi
+### Step 4: 
+
+Reboot the Pi
 
 To access configuration: argonone-config
 
 To uninstall it: argonone-uninstall
 
-Source: https://github.com/okunze/Argon40-ArgonOne-Script
+
+### Source: https://github.com/okunze/Argon40-ArgonOne-Script
