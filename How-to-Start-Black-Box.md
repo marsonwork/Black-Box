@@ -20,7 +20,7 @@ You can use add ons for UPS hat which are optional, it will let you know the UPS
 
 ## Step 2:
 
-Attach the Argon Fan Hat along with External HDD on USB 3.0 port.
+Attach the Argon Fan Hat along with External HDD on USB 3.0 port. Argon Fan hat will work at 50% speed by default, in order to configure and use its all functionality you can refer to Argon-Fan-Hat section under Initial-Setup. 
 
 ## Step 3: 
 
