@@ -1,6 +1,4 @@
-## Black Box assembly and setup guide
-
-Note: This document is still in development and I am replicating setup for black box to write each and every step, currently due to undervoltage issue, I have not completed it, will be finishing it soon once new stock of battery arrives.
+# Black Box assembly and setup guide
 
 ## Components required:
 
