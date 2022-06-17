@@ -6,12 +6,7 @@ UPS Hat works straight forward when you connect it to Raspberry Pi. In order to 
 
 ## What is the setup used for?
 
-ups-server.py: It can be used to view UPS stats on a local web page.
-ups-datalogger.py:    The stats can also be logged using another script.
-
-For continuous monitoring, you will have to enable run on boot for both the script (ups-server.py and ups-datalogger.py).
-
-
+ups-monitor.py : It grabs the UPS Hat stats, and then displays on local apache web server along with logging into csv.
 
 ## Pre-requisites: 
 
@@ -25,7 +20,14 @@ For continuous monitoring, you will have to enable run on boot for both the scri
 
 2. After that download the INA219.py script provided by waveshare (I have provided the same script here for convenience)
 
-3. Then create a directory (ex: ```mkdir ups-hat```) and place that script (INA219.py) into that. After that download the scripts: ups-server.py, ups-datalogger.py and templates folder. Move all these into the ups-hat directory. (Hint: For downloading and moving, you can also use another linux system and scp the files from there to ups-hat directory).
+3. Then create a directory (ex: ```mkdir UPS-Hat```) and place that script (INA219.py) into that. 
+   
+   * After that download the script: ups-monitor.py into the UPS-Hat directory. (Hint: For downloading and moving, you can also use another linux system and scp the files from there to ups-hat directory).
 
-4. Now you can any of the following using commands are: ```python ups-server.py``` or ```python ups-datalogger.py```
+4. Now install apache web server & configure using:
+	```sudo apt install apache2 -y```
+	```sudo usermod -a -G www-data pi```
+	```sudo chown -R -f www-data:www-data /var/www/html```
+
+5. Now to enable run on boot enter: ```echo 'sudo python /home/pi/UPS-Hat/ups-monitor.py &' >> /home/pi/.bashrc```
 
