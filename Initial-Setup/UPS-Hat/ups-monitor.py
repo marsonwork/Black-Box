@@ -10,7 +10,7 @@ log_file = "/home/pi/UPS-Hat/upslog.csv" #For log to be at particular locaiton
 
 #1: Print enable
 #0: Print disable
-debug_en = 1 
+debug_en = 0
 
 ina219 = INA219(addr=0x42)
 
