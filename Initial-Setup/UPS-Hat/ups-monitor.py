@@ -29,7 +29,6 @@ def update_html(voltage,current,power,percentage,cputemp):
         <html>
         <head>
                 <title>Black Box Health Monitor</title> 
-                <meta http-equiv="refresh" content="2">
                 <style>
                         .styled-table {
                             border-collapse: collapse;
