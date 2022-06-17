@@ -129,6 +129,9 @@ while True:
         if(p > 100):p = 100
         if(p < 0):p = 0
 
+        #If battery percentage < 5 %, then shutdown the Pi:
+        if(p < 5): os.system('sudo shutdown now') 
+
         # INA219 measure bus voltage on the load side. So PSU voltage = bus_voltage + shunt_voltage
         #print("PSU Voltage:   {:6.3f} V".format(bus_voltage + shunt_voltage))
         #print("Shunt Voltage: {:9.6f} V".format(shunt_voltage))
