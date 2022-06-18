@@ -10,7 +10,7 @@ log_file = "/home/pi/UPS-Hat/upslog.csv" #For log to be at particular locaiton
 
 #1: Print enable
 #0: Print disable
-debug_en = 0
+debug_en = False
 
 ina219 = INA219(addr=0x42)
 
@@ -22,6 +22,7 @@ def blockPrint():
 def enablePrint():
     sys.stdout = sys.__stdout__
 
+#Updates html page for dashboard
 def update_html(voltage,current,power,percentage,cputemp):
         f = open(dashboard, 'w')
         html_code = '''
@@ -111,26 +112,29 @@ def update_html(voltage,current,power,percentage,cputemp):
         # close the file
         f.close()
 
-def temperature_of_raspberry_pi():
-        cpu_temp = os.popen("vcgencmd measure_temp").readline()
-        return cpu_temp.replace("temp=", "")
+#Measure Pi's CPU temp
+def pi_cpu_temp():
+    cpu_temp = os.popen("vcgencmd measure_temp").readline()
+    return cpu_temp.replace("temp=", "")
 
+def main():
 
-while True:
+    #Check if print is enabled / disabled:
+    if debug_en: enablePrint()
+    else: blockPrint()
 
-        if   debug_en == 1: enablePrint()
-        elif debug_en == 0: blockPrint()
+    while True:
 
         bus_voltage = ina219.getBusVoltage_V()             # voltage on V- (load side)
         shunt_voltage = ina219.getShuntVoltage_mV() / 1000 # voltage between V+ and V- across the shunt
         current = ina219.getCurrent_mA()                   # current in mA
         power = ina219.getPower_W()                        # power in W
-        p = (bus_voltage - 6)/2.4*100
-        if(p > 100):p = 100
-        if(p < 0):p = 0
+        batt_percent = (bus_voltage - 6)/2.4*100
+        if(batt_percent > 100):batt_percent = 100
+        if(batt_percent < 0):batt_percent = 0
 
         #If battery percentage < 5 %, then shutdown the Pi:
-        if(p < 5): os.system('sudo shutdown now') 
+        if(batt_percent < 5): os.system('sudo shutdown now') 
 
         # INA219 measure bus voltage on the load side. So PSU voltage = bus_voltage + shunt_voltage
         #print("PSU Voltage:   {:6.3f} V".format(bus_voltage + shunt_voltage))
@@ -140,24 +144,25 @@ while True:
         LoadVoltage =str("{:6.3f} V".format(bus_voltage))
         Current =str("{:9.6f} A".format(current/1000))
         Power = str("{:6.3f} W".format(power))
-        Percentage = str("{:3.1f}%".format(p))
+        Percentage = str("{:3.1f}%".format(batt_percent))
 
-        pi_cpu_temp=temperature_of_raspberry_pi()
+        pi_temp=pi_cpu_temp()
 
         print("Date: ",today_date)
         print("Time: ",localtime) 
         print("Load Voltage:  {:6.3f} V".format(bus_voltage))
         print("Current:       {:9.6f} A".format(current/1000))
         print("Power:         {:6.3f} W".format(power))
-        print("Percent:       {:3.1f}%".format(p))
+        print("Percent:       {:3.1f}%".format(batt_percent))
         print("")
 
-        update_html(LoadVoltage,Current,Power,Percentage,pi_cpu_temp)
-
+        update_html(LoadVoltage,Current,Power,Percentage,pi_temp)
         upsdata = [str(today_date),str(localtime),LoadVoltage,Current,Power,Percentage,pi_cpu_temp]
 
         with open(log_file, 'a+') as csvfile: 
-                csvwriter = csv.writer(csvfile)
-                csvwriter.writerow(upsdata)
+            csvwriter = csv.writer(csvfile)
+            csvwriter.writerow(upsdata)
 
         time.sleep(60)
+
+main()
