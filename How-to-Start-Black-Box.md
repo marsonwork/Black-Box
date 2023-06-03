@@ -46,7 +46,17 @@ Now update the Pi using ```sudo apt update && sudo apt upgrade -y```
 
 * Following this: (OMV installation guide from here: https://wiki.omv-extras.org/doku.php?id=omv6:raspberry_pi_install)
 
-* Enter ``` wget -O - https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install | sudo bash ```
+* OMV installation command: Enter ``` wget -O - https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install | sudo bash ```
+
+While running the above script you might encounter with the error: Resolving raw.githubusercontent.com, to solve this: https://www.debugpoint.com/failed-connect-raw-githubusercontent-com-port-443/
+
+Steps to do using above link:
+
+enter: sudo nano /etc/hosts
+
+At the end enter: 185.199.108.133 raw.githubusercontent.com
+ 
+Then save and exit. Now re run the OMV installation command.
  
 ## Step 6:
 
@@ -70,11 +80,45 @@ Now update the Pi using ```sudo apt update && sudo apt upgrade -y```
                          Now go to Storage > Shared Folders > Permissions > Give pi as type user for permission to read / write > Save.
                          Now try to access the local shared folder from your pc over the same network.
 
+## Step 8: Adding duplicati in docker
+
+* https://www.youtube.com/watch?v=-NyzdAYMarw&list=PLhMI0SExGwfAU-UMeKxd1Lu5_a60AlA9N
+
+## Step 9: Adding nextcloud in docker
+
+Follow ref 1, only for writing the stack in docker. DO NOT DEPLOY YET: Keep the stack ready as per the external disk directory, then follow Video 2 for improving the directories and database (mariadb). Then deploy.
+
+
+* Ref Video 1: https://www.youtube.com/watch?v=7EoEll0lVXc&list=PLhMI0SExGwfAU-UMeKxd1Lu5_a60AlA9N
+* Ref video 2: https://www.youtube.com/watch?v=p0I8pikm2P4
+
+## Step 10: Setting up cloudflare tunnel for nextcloud
+
+Follow this video: https://youtu.be/p0I8pikm2P4
+
+### For one of the error: Strict-Transport-Security” HTTP header is not set to at least “15552000” seconds. For enhanced security, it is recommended to enable HSTS
+
+Solution:
+
+Enter the terminal of nextcloud app, then go to: ls /etc/apache2/sites-available/
+
+Under that, there might be multiple .conf file, for in one, you add(for me 000......conf): 
+
+Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains; preload"
+Save and close the conf file, restart the nextcloud app container.
+
+
+Refer this to add: https://docs.nextcloud.com/server/17/admin_manual/installation/harden_server.html#enable-http-strict-transport-security
+Discussion related to this issue: https://help.nextcloud.com/t/the-strict-transport-security-http-header-is-not-set-to-at-least-15552000-seconds-for-enhanced-security-it-is-recommended-to-enable-hsts/66568
+
+
+
 ## Important:
 
 Monitor in screen: if the pi takes a long time to boot: connect in monitor, check the status: Failed to start wait for network to be configured, network interface failed
 
 If it is mentioned as above: follow this link: https://forum.openmediavault.org/index.php?thread/32358-failed-to-start-wait-for-network-to-be-configured-network-interface-failed/
+
 
 Steps to solve: enter ```sudo omv-firstaid```, the configure wireless network, enter password in psk.
 
